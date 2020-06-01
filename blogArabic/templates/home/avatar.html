@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}إدخال معلومات{% endblock %}
+{% block content %}
+
+<!-- display image befor uploading -->
+    <script type="text/javascript">
+       function readimg(input){
+           if(input.files && input.files[0]){
+              var reader = new FileReader();
+              reader.onload = function (e){
+                   $('#idimg').attr('src', e.target.result);
+              };
+              reader.readAsDataURL(input.files[0]);
+            }
+          }
+
+
+
+
+    </script>
+
+
+
+ 
+
+  <div class="container">
+        <p class="lead text-center border-bottom py-2 text-secondary">إضافة  المعلومات</p>
+    <div class="row" style="margin-top: 2em;">
+  </div>
+
+
+  <!-- container -->
+  <div class="container">
+     <form  action="/profile/" method="post" id="registrationForm"enctype="multipart/form-data">{% csrf_token %} 
+    
+    <!-- row-->
+    <div class="row">
+
+
+      <!--column -->
+      <div class="col-lg-4 col-md-6">
+        <p class="border-bottom text-center py-1 my-5 font-weight-bold">معلومات شخصية</p>
+          <!--  input-->
+          <div class="form-group">
+              <label for="exampleInputEmail1">اسم أول</label>
+              <input type="text" class="form-control"  placeholder="" name="firstname">
+            
+          </div>
+          <!-- end input -->
+
+          <!--  input-->
+          <div class="form-group">
+              <label for="exampleInputEmail1">المهنة</label>
+              <input type="text" class="form-control"  placeholder="" name="job">
+            
+          </div>
+          <!-- end input -->
+
+          <!--  input-->
+          <div class="form-group">
+              <label for="exampleInputEmail1">العمر</label>
+              <input type="text" class="form-control"  placeholder="" name="age">
+            
+          </div>
+          <!-- end input -->
+
+          <!--  input-->
+          <div class="form-group">
+              <label for="exampleInputEmail1">البلد</label>
+              <input type="text" class="form-control"  placeholder="" name="pays">
+            
+          </div>
+          <!-- end input -->
+
+          <!--  input-->
+          <div class="form-group">
+              <label for="exampleInputEmail1">الجنس</label>
+              <input type="text" class="form-control"  placeholder="" name="gender">
+            
+          </div>
+          <!-- end input -->
+
+          <!--  input-->
+          <div class="form-group">
+              <label for="exampleInputEmail1">المستوى الدراسي</label>
+              <input type="text" class="form-control"  placeholder="" name="level">
+            
+          </div>
+          <!-- end input -->
+
+        
+      </div>
+      <!--end column -->
+      <!--column -->
+      <div class="col-lg-4 col-md-6">
+
+          <p class="border-bottom text-center py-1 my-5 font-weight-bold">كيف يصل إليك القارئ</p>
+          <!--  input-->
+          <div class="form-group">
+              <label for="exampleInputEmail1">حسابك الفايسبوك</label>
+              <input type="text" class="form-control" name="facebook_account"  placeholder="https://web.facebook.com/username">
+            
+          </div>
+          <!-- end input -->
+            <!--  input-->
+          <div class="form-group">
+              <label for="exampleInputEmail1">حسابك على الأنستقرام</label>
+              <input type="text" class="form-control" name="instagram_account"  placeholder="https://www.instagram.com/username">
+            
+          </div>
+          <!-- end input -->
+           
+            <!--  input-->
+          <div class="form-group">
+              <label for="exampleInputEmail1">قناتك على اليوتوب</label>
+              <input type="text" class="form-control" name="youtube_channel"  placeholder="youtube channel">
+            
+          </div>
+          <!-- end input -->
+
+           <!--  input-->
+          <div class="form-group">
+              <label for="exampleInputEmail1">حسابك على التويتر</label>
+              <input type="text" class="form-control" name="twitter_account"  placeholder="https://twitter.com/username">
+            
+          </div>
+          <!-- end input -->
+          
+        
+      </div>
+      <!--end column -->
+      <!--column -->
+      <div class="col-lg-4 col-md-6">
+         <p class="border-bottom text-center py-1 my-5 font-weight-bold">اختر صورة شخصية</p>
+
+       
+
+      <img id="idimg" src="..." alt="..." class="img-thumbnail" style="max-width: 10em;
+          border: none;
+          border-radius: 100%;
+          height: 10em;">
+     
+      <div class="form-group">
+    
+       <div class="custom-file">
+        <input type="file" class="custom-file-input"  id="idupload" name="profile_picture" onchange ="readimg(this);">
+        <label class="custom-file-label" for="inputGroupFile01">حمل صورة</label>
+       </div>
+
+      </div>
+
+    
+       <button type="submit" class="btn btn-primary" style="background-color: #32234b;border:none;">حفظ البيانات</button>
+          
+        
+      </div>
+      <!--end column -->
+     
+      
+    </div>
+    <!-- end row-->
+     </form>
+       
+  </div>
+  <!-- end container -->
+
+ 
+
+ {% endblock %}

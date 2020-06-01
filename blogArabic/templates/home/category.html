@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}تصنيف المقالات{% endblock %}
+{% block content %}
+
+
+
+  
+
+    <!-- row-->
+    <div class="container">
+        <p class="lead text-center border-bottom py-2 text-secondary" style="font-family:'Cairo', sans-serif;">عرض لجميع الموضوعات المتوفرة</p>
+    <div class="row" style="margin-top: 2em;">
+      
+
+         <!-- column -->
+
+         {% for show in topic %}
+     <div class="col-lg-4 col-md-6">
+
+        <a class="nav-link" href="/topic/{{show.id}}/{{show.slug}}">
+            <figure class="figure">
+             <img src="{{show.image_category.url}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+            
+             <figcaption class="figure-caption"> <p style="background-color: {{show.color}};
+              max-width: 1em;
+               height: 1em;
+              border-radius: 100%;"></p>  <span class=" font-weight-bold" style="font-family: 'Cairo', sans-serif;">{{show.name}}</span></figcaption>
+          </figure>
+        </a>
+            
+     </div>
+        <!-- end column -->
+        {% endfor %}
+
+        
+    </div>
+    <!-- end row -->
+    
+</div>
+<!-- end container -->
+
+
+ {% endblock %}

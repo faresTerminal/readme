@@ -1,0 +1,18 @@
+ User-agent: Mediapartners-Google
+      Disallow:
+
+      User-agent: *
+      Disallow: /admin
+
+      User-agent: *
+      Disallow: /pythonDZ
+
+
+      User-agent: *
+      Disallow: /search.html
+
+      User-agent: *
+      Disallow: /comments/*
+
+      User-agent: Mediapartners-Google*
+      Disallow:

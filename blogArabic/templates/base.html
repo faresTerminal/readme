@@ -1,0 +1,303 @@
+{% load static from staticfiles %}
+
+
+   
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Home</title>
+
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Lalezar" rel="stylesheet"> 
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome-all.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet"> 
+   
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Lalezar" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/classy-nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-rtl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style22.css' %}">
+    
+   
+
+   
+   
+
+</head>   
+
+ 
+
+<body class="rtl">
+
+
+
+ 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 20em; ">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="background-color:#32234b; color:#fff; font-family: 'Cairo', sans-serif;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">تسجيل الخروج</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        يسعدنا توجدك مرة أخرى
+        <a class="text-info" href="/logout/" style="text-decoration: none; margin-right: 2em;">تسجيل الخروج</a>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+  
+ <!-- create small navbar -->
+<!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area" >
+        <!-- Navbar Area -->
+        <div class="newsbox-main-menu" >
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="newsboxNav">
+
+                        <!-- Nav brand -->
+                        <!--
+                        <a href="/" class="nav-brand"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
+                    -->
+                        <a style="text-decoration: none;font-family: 'Piedra', cursive;font-size: 40px !important;color: #393c3e" href="/" class="nav-brand b-4 font-weight-bold">Post<span class="font-weight-bold" style="color: #ef1b48;font-family: 'Piedra', cursive;font-size: 40px !important;">Read</span></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav" >
+                                <ul>
+                                    <li><a class="" style="font-family: 'Cairo', sans-serif;"  href="/show_category/">المقالات</a>
+                                        <div class="megamenu" style="font-family: 'Cairo', sans-serif;">
+                                            <ul  class="single-mega cn-col-4" style="font-family: 'Cairo', sans-serif;">
+                                                
+                                                <li><a href="/topic/11/البيئة/">البيئة</a></li>
+                                                <li><a href="/topic/9/الصحة/">الصحة</a></li>
+                                                <li><a href="/topic/1/البرمجة">البرمجة</a></li>
+                                                <li><a href="/topic/8/الرياضة">الرياضة</a></li>
+                                                
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                             
+                                                <li><a href="/topic/10/تطبيقات-الهاتف">تطبيقات الهاتف</a></li>
+                                                <li><a href="/topic/6/الإبتكار-و-التكنولوجيا/">التكنولوجيا و الابتكارات</a></li>
+                                                <li><a href="/topic/18/علم-الفلك/">علم الفلك</a></li>
+                                                <li><a href="/topic/19/تصاميم/">تصاميم</a></li>
+                                                
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                                
+                                              
+                                                <li><a href="/topic/7/الإقتصاد/">الاقتصاد</a></li>
+                                                <li><a href="/topic/4/عالم-الكائنات-الحية/">عالم الكائنات الحية</a></li>
+                                                <li><a href="/topic/2/ألعاب-الفيديو/">ألعاب الفيديو</a></li>
+                                                <li><a href="/topic/12/التلفزيون/">التلفزيون</a></li>
+
+                                                
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                               
+                                                <li><a href="/topic/13/الثقافة/">ثقافة</a></li>
+                                                <li><a href="/topic/14/الطبخ/">مأكولات</a></li>
+                                                <li><a href="topic/3/الأفلام-و-الأنمي/">أفلام و أنمي</a></li>
+                                                <li><a href="/topic/16/الكتب/">مجالات و كتب</a></li>
+                                                <li><a href="/topic/5/الأنترنات-و-التواصل-الإجتماعي/">الأنترنات و التواصل الاجتماعي</a></li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a style="font-family: 'Cairo', sans-serif;" href="/faq">التعليمات</a></li>
+                                    <li><a style="font-family: 'Cairo', sans-serif;" href="/search">البحث</a>
+                                        
+                                    </li>
+                                    <li><a href="/about" style="font-family: 'Cairo', sans-serif;">من نحن</a>
+                                        
+                                    </li>
+                                    <li><a style="font-family: 'Cairo', sans-serif;" href="/contact">اتصل بنا</a></li>
+                                </ul>
+                                
+                                
+
+                                {% if request.user.is_authenticated %}
+                                <!-- Avatar-->
+                                <div class="header-add-area">
+                                    <div class="classynav" >
+                                        <ul>
+                                            <li>
+                                    <div class="comment-author">
+                                        <img src="{{ request.user.author_set.first.profile_picture.url }}" alt="author" style="max-width: 2.5em; margin-right: 10px;height: 2.5em;">
+
+
+                                    </div>
+                                            </li>
+
+                                    
+                                             <li><a href="#">{{full_name}}</a>
+                                        <ul class="dropdown">
+                                            <li><a href="/profile" style="font-family: 'Cairo', sans-serif;">حسابي</a></li>
+                                            <li><a href="/create" style="font-family: 'Cairo', sans-serif;">إضافة مقال</a></li>
+                                            <li><a href="/logout" style="font-family: 'Cairo', sans-serif;">تسجيل الخروج</a></li>
+                                           
+                                            <li>
+                                               
+                                            </li>
+                                           
+                                            
+                                        </ul>
+                                    </li>
+                                        </ul>
+                                    </div>  
+                                  
+                                 </div>
+                                <!-- end AVATAR -->
+                                {% else %}
+                                <!-- Header Add Area -->
+                                <div class="header-add-area">
+                                 <div class="elements-title mb-30" style="margin-top: 3em;font-family: 'Cairo', sans-serif;">
+                                    <!-- Buttons -->
+                                   <div class="newsbox-buttons-area mb-50">
+                                       <a href="/register" class="btn newsbox-btn m-1" style=";font-family: 'Cairo', sans-serif;">فتح حساب</a>
+                                       <a style=";font-family: 'Cairo', sans-serif;" href="/login" class="btn newsbox-btn btn-2 m-1">الدخول</a>
+                                       
+                                    </div>
+                                  </div>
+                                    
+                                </div>
+
+                                <!-- End Header add Area -->
+                                {% endif %}
+                            </div>
+                            <!-- Nav End -->
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    
+
+    
+<!-- end small navbar-->
+
+
+ {% block content %}
+
+
+
+{% endblock %}
+ <!-- ##### Add Area Start ##### -->
+    <div class="big-add-area mb-100">
+        <div class="container-fluid">
+            <a href="#"><img src="img/bg-img/add2.png" alt=""></a>
+        </div>
+    </div>
+    <!-- ##### Add Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <!-- Footer Logo -->
+        <div class="footer-logo mb-100">
+          <a style="text-decoration: none;font-family: 'Piedra', cursive;font-size: 40px !important;color: #393c3e" href="/" class="nav-brand b-4 font-weight-bold">Post<span class="font-weight-bold" style="color: #ef1b48;font-family: 'Piedra', cursive;font-size: 40px !important;">Read</span></a>
+        </div>
+        <!-- Footer Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-content text-center">
+                        <!-- Footer Nav -->
+                        <div class="footer-nav">
+                            <ul>
+                               
+                                <li><a style="font-family: 'Cairo', sans-serif;" href="/terms_services">سياسة الخصوصية</a></li>
+                                 <li><a style="font-family: 'Cairo', sans-serif;" href="/contact">اتصل بنا</a></li>
+                                <li><a style="font-family: 'Cairo', sans-serif;" href="/privacy">شروط الخصوصية</a></li>
+                            </ul>
+                        </div>
+                        <!-- Social Info -->
+                        <div class="footer-social-info">
+                            
+                            <a href="https://www.facebook.com/profile.php?id=100044763552720" data-toggle="tooltip" data-placement="top" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                           
+                           
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                           
+                        </div>
+
+                        <p style="font-family: 'Cairo', sans-serif;" class="mb-15">بوست-ريد ليس مثل أي منصة أخرى على الإنترنت. هدفنا الوحيد هو مساعدتك في العثور على أفكار ومعرفة ووجهات نظر مقنعة. نحن نخدمك ، القارئ الفضولي الذي يحب تعلم أشياء جديدة. بوست-ريد موطن لآلاف الأصوات المستقلة ، ونحن نجمع بين البشر والتكنولوجيا على أفضل قراءة لك - وتصفية البقية. </p>
+
+                        <!-- Copywrite Text -->
+                        <p class="copywrite-text"><a href="#">
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;2020 All rights reserved | This website is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Mazari_Yacine</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/bootstrap/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- All Plugins js -->
+    <script src="{% static 'js/plugins/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/active.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+# [START django_app]
+runtime: python
+# vm: true has been deprecated
+# check how env:flex may affect your billing
+env: flex
+
+
+runtime_config:
+    python_version: 3
+
+
+
+
+handlers:
+# This configures Google App Engine to serve the files in the app's
+# static directory.
+- url: /static
+  static_dir: assets
+
+- url: /media
+  static_dir: media
+
+- url: /.*
+  script: auto
+
+
+
+# This handler routes all requests not caught above to the main app. 
+# It is required when static routes are defined, but can be omitted 
+# (along with the entire handlers section) when there are no static 
+# files defined.
+
+
+# [END django_app]

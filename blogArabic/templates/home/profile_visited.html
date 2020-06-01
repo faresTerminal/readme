@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% block title %}{{user.name}}حساب الناشر{% endblock %}
+{% block content %}
+<!-- container-->
+
+
+<div class="container">
+  <!-- row -->
+  <div class="row " style="margin-top: 5em">
+   
+
+       <!-- column-->
+    <div class="col-lg-4 text-center shadow-lg p-3 mb-5 bg-white rounded my-4 " >  
+       
+     <p class="card-text">{{user.name}}</p>
+      
+     <img class="card-img-top " src="{{ user.profile_picture.url }}" alt="Card image cap" style="width: 8em ;">
+     <div class="card-body">
+       
+         <p style="font-family: 'Cairo', sans-serif;" class="card-text p6">تاريخ الإنضمام</p>
+         <p class="card-text text-info">{{user.name.date_joined}}</p>
+         <div class="social">
+            <ul>
+                <li><a href="{{user.facebook_account}}"><i class="fa fa-lg fa-facebook"></i></a></li>
+                <li><a href="{{user.twitter_account}}"><i class="fa fa-lg fa-twitter"></i></a></li>
+                <li><a href="{{user.instagram_account}}"><i class="fa fa-lg fa-instagram"></i></a></li>
+                <li><a href="{{user.youtube_channel}}"><i class="fa fa-lg fa-youtube-play"></i></a></li>
+            </ul>
+
+        </div>
+         
+      </div>
+     
+
+    </div>
+    <!-- end column -->
+     <!-- column-->
+    <div class="col-lg-8 shadow-lg p-3 mb-5 bg-white rounded">
+
+       <div class="col-lg-12 my-4 border-bottom "> <p class="h5" style="color: black
+       ;font-family: 'Cairo', sans-serif;text-align: center;font-size: 1rem;">عن المستخدم</p></div>
+       
+                                            
+                                        <div class="row">
+                                            <div class="col-md-6 font-weight-bold">
+                                                <label style="font-family: 'Cairo', sans-serif;">اسم الأول</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{user.firstname}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 font-weight-bold">
+                                                <label style="font-family: 'Cairo', sans-serif;">البريد الالكتروني</label>
+                                            </div>
+                                            <div class="col-md-6 ">
+                                                <p>مخفي</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 font-weight-bold">
+                                                <label style="font-family: 'Cairo', sans-serif;">المهنة</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{user.job}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 font-weight-bold">
+                                                <label style="font-family: 'Cairo', sans-serif;">العمر</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{user.age}}</p>
+                                            </div>
+                                        </div>
+                                         <div class="row">
+                                            <div class="col-md-6 font-weight-bold">
+                                                <label style="font-family: 'Cairo', sans-serif;">البلد</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{user.pays}}</p>
+                                            </div>
+                                        </div>
+                                         <div class="row">
+                                            <div class="col-md-6 font-weight-bold">
+                                                <label style="font-family: 'Cairo', sans-serif;">الجنس</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{user.gender}}</p>
+                                            </div>
+                                        </div>
+                                         <div class="row">
+                                            <div class="col-md-6 font-weight-bold">
+                                                <label style="font-family: 'Cairo', sans-serif;">المستوى الدراسي</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{user.level}}</p>
+                                            </div>
+                                        </div>
+    </div>
+    <!-- end column -->
+
+       <!-- column-->
+    <div class="col-lg">
+        
+    </div>
+    <!-- end column -->
+    
+  </div>
+  <!-- end row -->
+  
+</div>
+<!-- end container -->   
+
+<!-- create global content -->
+   <div class="container">
+
+    <div class="row" style="margin-top: 5em;"> 
+       <div class="col-lg-12 my-4 border-bottom "> <p class="h5" style="color: black;
+         font-family: 'Cairo', sans-serif; text-align: center;font-size: 1rem;">منشورات {{user.name}}</p></div>
+
+      
+
+            <!-- row-->
+            <div class="row">
+
+
+
+              
+             <!-- small col -->
+             {% for dd in art %}
+             <div class="col-lg-4 col-md-6 shadow-sm p-3 mb-5 bg-white rounded">
+                   
+
+                    <figure class="figure">
+                      {% thumbnail dd.image "400x250" crop="center" as d %}
+                       <img width="{{ d.width }}" height="{{ d.height }}"  src="{{d.url}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                       {% endthumbnail%}
+  
+                   </figure>
+               
+                    
+            
+
+             
+                
+                   
+                    <a class="" href="/article/{{dd.id}}/{{dd.slug}}" style="color:#212529; text-decoration: none !important"> <p style="font-family: 'Cairo', sans-serif;font-size: 1rem;" class="h4 my-2">{{dd.title}}</p></a>
+
+                   
+                    <p class="h6">{{dd.posted_on}}</p>
+                    <p> 
+                      <span class="badge badge-light">{{ dd.total_likes}}</span> <i class="far fa-thumbs-up" style="color:#32234b;"></i>   
+                    </p>
+
+                    
+              </div>
+                <!-- end small col -->
+                {% endfor %}
+
+
+
+
+
+               
+
+            </div>
+            <!-- end row -->
+
+       
+        
+    </div>
+    <!-- end row -->
+    </div>
+    <!-- end conatiner -->
+    <div class="container">
+  
+
+
+          </div>         <!-- end like dislike button -->                  
+    
+{% endblock %}

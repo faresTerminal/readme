@@ -1,0 +1,172 @@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+     <div class="row">
+                    <div class="col-md-4">
+                      
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>اسم المستخدم</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="text-info">{{user.name}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>اسم الأول</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="text-info">{{user.firstname}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>البريد الالكتروني</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="text-info">{{ user.name.email }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>المهنة</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="text-info">{{ user.job }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>العمر</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="text-info">{{ user.age }}</p>
+                                            </div>
+                                        </div>
+                                         <div class="row">
+                                            <div class="col-md-6">
+                                                <label>البلد</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="text-info">{{ user.pays }}</p>
+                                            </div>
+                                        </div>
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                                <label>الجنس</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="text-info">{{ user.gender }}</p>
+                                            </div>
+                                        </div>
+
+                                         <div class="row">
+                                            <div class="col-md-6">
+                                                <label>المستوى الدراسي</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="text-info ">{{ user.level }}</p>
+                                            </div>
+                                        </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <form>
+                                <!-- row -->
+                               <div class="row">
+                                <div class="col-lg-1">
+                                    
+                                </div>
+                                <div class="col-lg-5 ">
+
+                                                 <div class="form-group">
+          
+                                                  <label for="inputPassword">كلمة سر قديمة</label>
+                                                  <input type="password" class="form-control" id="inputPassword">
+                                                  
+                                                 </div>
+                                                
+                                           
+                                    
+                                </div>
+                                <div class="col-lg-6">
+
+                                    
+                                </div>
+
+                               
+                            </div>
+                            <!-- end row -->
+    
+
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    
+       <!-- row -->
+                               <div class="row">
+                                <div class="col-lg-1">
+                                    
+                                </div>
+                                <div class="col-lg-5">
+
+                                                 <div class="form-group">
+          
+                                                  <label for="inputPassword">كلمة سر جديدة</label>
+                                                  <input type="password" class="form-control" id="inputPassword">
+                                                 
+                                                 </div>
+                                                
+                                           
+                                    
+                                </div>
+                                <div class="col-lg-6">
+                                    
+                                </div>
+                               
+                            </div>
+                            <!-- end row -->
+
+                             <!-- row -->
+                               <div class="row">
+                                <div class="col-lg-1">
+                                    
+                                </div>
+                                <div class="col-lg-5">
+
+                                                 <button type="submit" class="btn btn btn-primary" style="background-color: #32234b !important; border:none;">تغيير
+          
+                                                  </button>
+                                           
+                                    
+                                </div>
+                                <div class="col-lg-6">
+                                    
+                                </div>
+                               
+                            </div>
+                            <!-- end row -->
+                            </form>
+                            
+
+  </div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    
+    <p class="h6 text-center">
+      hello
+    </p>
+  </div>
+</div>

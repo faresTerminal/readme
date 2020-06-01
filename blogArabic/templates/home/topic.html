@@ -1,0 +1,212 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block title %}تصنيف المقال{% endblock %}
+
+{% block content %}
+
+ {% if first_post %}
+      {% for f in first_post%}
+ 
+ <!-- ##### Catagory Featured Area Start ##### -->
+    <div class="catagory-featured-post bg-overlay clearfix" style="background-image: url({{f.image.url}})">
+        <div class="container-fluid h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 col-lg-9">
+                    <!-- Post Content -->
+                    <div class="post-content">
+                        <p class="tag" style="background-color: {{f.category.color}}"><span style="font-family: 'Cairo', sans-serif;">{{f.category}}</span></p>
+                        <a style="font-family: 'Cairo', sans-serif !important;text-decoration: none;" href="/article/{{f.id}}/{{f.slug}}" class="post-title">{{f.title}}</a>
+                         <!-- avatar pic -->
+                          <div class="comment-author">
+                                <img src="{{ f.avatar.profile_picture.url }}" alt="author" style="max-width: 3.5em; margin-right: 10px;height: 3.5em;border-radius: 80%;">
+
+                           
+                          <span class="post-date m-2"><a style="font-size: 1em;
+                           text-decoration: none;" href="/user/{{f.avatar.id}}">{{f.article_author}}</a></span>
+                          </div>
+
+
+                        
+                        <span class="post-date">{{f.posted_on}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Catagory Featured Area End ##### -->
+  
+  <div class="container">
+<!-- create first row -->
+
+    <div class="row py-2" style="margin-top: 5em;">
+     
+      <!-- column -->
+
+      <div class="col-lg-8 ">
+        
+        
+        {% endfor %}
+
+        
+
+        <p class="h6 pr1 border-bottom py-2" style="font-family: 'Cairo', sans-serif;">مقالات الجديدة</p>
+        {% for s in post %}
+        <!-- row for new publication -->
+        <div class="row py-2">
+          
+          <!-- column-->
+          
+          <div class="col-lg-4 col-md-6">
+            <figure class="figure">
+              {% thumbnail s.image "400x250" crop="center" as d %}
+          <img width="{{ d.width }}" height="{{ d.height }}" src="{{d.url}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure." class="m-2">
+              {% endthumbnail %}
+  
+                </figure>
+            
+          </div>
+          <!-- end column-->
+          
+
+           <!-- column-->
+          <div class="col-lg col-md-6">
+           <a class="" href="/article/{{s.id}}/{{s.slug}}" style="color: #32234b; text-decoration: none !important;font-family: 'Cairo', sans-serif"> <p class="h6 pr1 font-weight-bold">{{s.title}}</p></a>
+             <!-- avatar pic -->
+                          <div class="comment-author">
+                                <img src="{{ s.avatar.profile_picture.url }}" alt="author" style="max-width: 2.5em; margin-right: 10px;height: 2.5em;border-radius: 80%;">
+
+                           
+                         
+                          </div>
+            <p class="h6 pr2 m-2" style="margin-right: 4em; margin-top: 1em; "><a style="text-decoration: none;" href="/user/{{s.avatar.id}}"> {{ s.article_author }}</a></p>
+            <p class="h6 pr2 m-2 " style="margin-right: 5em;  ">{{ s.posted_on}}</p>
+             <p> 
+                      <span class="post-date m-2">المشاهدات {{s.read}}</span>|
+                      <span class="post-date m-2">الاعجابات {{s.total_likes}}</span>
+             </p>
+            
+          </div>
+          <!-- end column-->
+
+          
+        </div>
+        <!-- end row new publications-->
+        {% endfor %}
+
+
+        <!-- add paginator-->
+        <nav aria-label="...">
+  <ul class="pagination">
+    <span class="step-links">
+        {% if post.has_previous %}
+            <a href="?page=1">&laquo; الأول</a>
+            <a href="?page={{ post.previous_page_number }}">السابقة</a>
+        {% endif %}
+
+        <span class="current">
+            صفحة {{ post.number }} من {{ post.paginator.num_pages }}.
+        </span>
+
+        {% if post.has_next %}
+            <a href="?page={{ post.next_page_number }}">التالية</a>
+            <a href="?page={{ post.paginator.num_pages }}">الأخير &raquo;</a>
+        {% endif %}
+    </span>
+  </ul>
+</nav>
+
+        <!-- end paginator -->
+          
+
+        
+
+        
+      </div>
+      <!-- end column-->
+      <!-- column -->
+       <div class="col-lg-4 ">
+         <div class="sidebar-area">
+
+                        <!-- Newsletter Widget -->
+                        <div class="single-widget-area newsletter-widget mb-30">
+                            <h4 style="font-family: 'Cairo', sans-serif;">متابعة كل جديد الموقع</h4>
+                            <form action="#" method="post">
+                                <input type="email" name="nl-email" id="nlemail" placeholder="Your E-mail">
+                                <button type="submit" class="btn newsbox-btn w-100" style="font-family: 'Cairo', sans-serif;">متابعة</button>
+                            </form>
+                            <p class="mt-30">Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh . volutpat lobortis.</p>
+                        </div>
+                        <!-- Add Widget -->
+                       
+                        
+       <p class="h6 pr1 border-bottom py-2 " style="margin-top: 2.5em;font-family: 'Cairo', sans-serif;">مقالات متنوعة</p>
+        <!-- add row -->
+        {% for t in six_articles %}
+        <div class="row border-bottom my-2">
+          <!-- column-->
+          <div class="col-lg-4 col-md-6">
+            <figure class="figure">
+               {% thumbnail t.image "400x250" crop="center" as h %}
+            <img width="{{ h.width }}" height="{{ h.height }}" src="{{h.url }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                {% endthumbnail %}
+            
+           </figure>
+           
+            
+          </div>
+          <!-- end column -->
+
+          <!-- column -->
+          <div class="col-lg-8 col-md-6">
+             <a class="" href="/article/{{t.id}}/{{t.slug}}" style="color: #32234b; text-decoration: none !important"><p class="h6 pr1 font-weight-bold" style="font-family: 'Cairo', sans-serif;">{{t.title}}</p></a>
+            <p class="h6" style="margin-top: 1em;">{{ t.posted_on}}</p>
+            
+          </div>
+          <!-- end column -->
+
+          
+        </div>
+        <!-- end row -->
+        {% endfor %}
+</div>
+
+
+        <br/>
+        
+    
+  </div>
+</div>
+</div>
+
+  <!-- end container -->
+  
+    <!-- else display no articles to show -->
+    {% else%}
+            <div class="container">
+        <div class="row" style="margin-top: 15em;">
+          <div class="col-lg"></div>
+         <div class="col-lg-8 text-center">
+          <p class="h6 my-4" style="font-size: 2em !important;font-family: 'Cairo', sans-serif;">آسف لكن لا تتوفر مقالات في هذا الجانب</p>
+          <p class="h6 my-4" style="font-size: 2em !important;font-family: 'Cairo', sans-serif;">نرجو منك أن تضيف مقالة جديدة من تحريرك</p>
+          {% if request.user.is_authenticated %}
+          <a class="btn btn-dark btn-lg " href="/create/" role="button" style="margin-top: 2em; background-color: #32234b;font-family: 'Cairo', sans-serif;">إضافة مقال</a>
+          </div>
+          {% else%}
+          <a class="btn btn-dark btn-md " href="/login/" role="button" style="margin-top: 2em; background-color: #32234b " style="font-family: 'Cairo', sans-serif;">تسجيل دخول</a> 
+           <a class="btn btn-dark btn-md " href="/register/" role="button" style="margin-top: 2em; background-color: #32234b;font-family: 'Cairo', sans-serif;">فتح حساب</a>
+         </div>
+         {% endif %}
+          <div class="col-lg"></div>
+       </div>
+     </div>
+</div>
+
+       
+        {% endif %}
+
+ 
+  
+
+{% endblock %}

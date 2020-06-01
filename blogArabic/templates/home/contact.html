@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}إتصل بنا{% endblock %}
+{% block content %}
+
+
+ 
+
+
+ 
+  
+
+
+<!-- container-->
+<div class="container">
+    <!-- great row -->
+    <div class="row shadow-lg p-3 mb-5 bg-white rounded" style="margin-top: 10em;">
+        <!-- column -->
+        <div class="col-lg-6 ">
+
+            <!--container-->
+  <div class="container">
+    <!-- contact form -->
+    <div class="row " >
+        <form action="/contact_send/"  class="contact-form" method="post"> {% csrf_token %}
+            <p class="h6 pr1">يمكنك ارسال تقرير او رسالة تعبر عنها عن شيء يخص الموقع</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username1" placeholder="اسم المستخدم">
+                        </div>
+                    </div>
+                        <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="البريد الالكتروني">
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="form-group">
+                            <textarea class="form-control textarea" rows="3" name="text_body" id="Message" placeholder="محتوى"></textarea>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="col-md-12">
+                  <button type="submit" class="btn main-btn pull-right my-2" style="background-color: #32234b !important;">ارسال  </button>
+                  </div>
+                  </div>
+                </form>
+    </div>
+    <!-- end contact form -->
+      
+  </div>
+  <!-- end container -->
+            
+        </div>
+        <!-- end column -->
+
+         <!-- column -->
+        <div class="col-lg-6 ">
+            <figure class="figure">
+                <img src="{% static 'images/contact.jpg' %}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+  
+              </figure>
+            
+        </div>
+        <!-- end column -->
+        
+    </div>
+    <!-- end great row -->
+    
+</div>
+<!-- end container -->
+  
+
+
+<div class="container">
+     <section id="contact" style="margin-top: 10em;">
+       <div class="container">
+           <h3 class="text-center text-uppercase">اتصل بنا</h3>
+           <p class="text-center w-75 m-auto">تنقلك متوسطة إلى أدمغة الكتاب الأكثر ثراءً في العالم ، والمفكرين ، ورواة القصص لجلبك أذكى الأشياء التي تهمك. أيًا كانت اهتماماتك ، يمكنك دائمًا العثور على تفكير جديد ووجهات نظر فريدة.</p>
+           <div class="row">
+             <div class="col-sm-12 col-md-6 col-lg-4 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 class="text-uppercase mb-5">اتصل بنا</h4>
+                    <p> 53 42 56 697 213+    <br/> 61 29 27 0673 213+    </p>
+                  </div>
+                </div>
+             </div>
+            
+             <div class="col-sm-12 col-md-6 col-lg-4 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 class="text-uppercase mb-5">رؤية المدينة مكتب</h4>
+                    <address>Suite 02, Level 12, Home Center </address>
+                  </div>
+                </div>
+             </div>
+             <div class="col-sm-12 col-md-6 col-lg-4 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 class="text-uppercase mb-5">البريد الالكتروني</h4>
+                    <p>mazariyacine3@gmail.com</p>
+                  </div>
+                </div>
+             </div>
+           </div>
+       </div>
+    </section>
+    
+
+  {% endblock %}

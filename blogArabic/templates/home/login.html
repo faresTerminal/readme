@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}تسجيل دخول{% endblock %}
+{% block stylesheet %}
+{% endblock %}
+{% block profile %}
+{% endblock %}
+{% block content %}
+
+
+{% if messages %}
+    <div class="alert alert-success text-center " style="margin-top: 8em;">
+        {% for message in messages %}
+
+      
+       
+            <!-- msg article published -->
+        {%if "passwordWrong" in message.tags %}
+          <p> {{message}}  </p>   
+        {%endif%} 
+        <!-- end msg article published--> 
+
+        {% endfor %}
+    </div>
+    {% endif %} 
+  
+
+
+
+  <div class="container">
+  <div class="row rows" style="margin-top: 3em;">
+
+    
+      {% if messages %}
+      <div class="messages">
+          {% for message in messages %}
+                    <div {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+        <div class="col-lg col-md"></div>
+       <!-- Newsletter Widget -->
+            <div class="col-lg-6 col-md-8">
+               <div class="sidebar-area">
+                        <div class="single-widget-area newsletter-widget mb-10">
+                            <h4>تسجيل الدخول إلى حسابك</h4>
+                            <form role="form" action="/auth/" method="POST">{% csrf_token %}
+                                <label for="inputUsernameEmail">اسم المستخدم</label>
+                                <input type="text" name="username" id="nlemail" placeholder="######">
+                                 <label for="inputPassword">كلمة السر</label>
+                                <input type="password" name="password" id="nlemail" placeholder="######">
+                                 <a class="pull-right" href="/reset_password/">نسيت كلمة السر؟</a>
+                                <button type="submit" class="btn newsbox-btn w-100" style="margin-top: 1em;">الدخول</button>
+                            </form>
+                            <p class="mt-30">Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh . volutpat lobortis.</p>
+                        </div>
+              </div>
+            </div>
+            <!-- end column -->
+            <div class="col-lg col-md"></div>
+          
+      
+
+     
+    
+    
+    
+  </div>
+  <!-- end row -->
+</div>
+<!-- end container -->
+ {% if messages %}
+    <div class="messages">
+        
+        <div class="msg">{{ message }}</div>
+        
+    </div>
+    {% endif %}   
+         
+ 
+
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}البحث{% endblock %}
+{% block content %}
+
+
+{% if messages %}
+    <div class="alert alert-primary text-center " style="margin-top: 6em;">
+        {% for message in messages %}
+
+        <!-- when logout -->
+        {%if "search" in message.tags %}
+          <p> {{message}} </p>   
+        {%endif%} 
+        <!-- end logout -->
+
+     
+
+        {% endfor %}
+    </div>
+    {% endif %} 
+
+
+ <!-- search -->
+    <!-- container -->
+    <div class="container">
+      <!-- row-->
+      <div class="row" style="margin-top: 5em;">
+        <div class="col-lg"></div>
+        <!-- column -->
+        <div class="col-lg-12 col-md-12 col-sm-12">
+              <form class="form-inline my-2 " action="" method="GET">
+                         <input class="form-control mr-sm-2 my-md-1 " type="search" placeholder="ﻛﻠﻤﺔ اﻟﺒﺤﺚ" aria-label="Search" style="width: 80%;" name="q">
+                        <button class="btn  my-4 my-sm-0 btn-md" type="submit" style="background-color: #32234b; color:#fff;">البحث</button>
+              </form>
+          
+        </div>
+        <!-- end column -->
+         <div class="col-lg"></div>
+        
+      </div>
+      <!-- end row -->
+      
+    </div>
+    <!-- end container -->
+    <!-- end search -->
+
+<div class="container">
+	<div class="row" style="margin-top: 8em;">
+		
+		 <!-- column -->
+        <div class="col-lg-6 ">
+            <!-- row-->
+            <div class="row">
+            	{% for ar in all_articles%}
+		 <div class="col-lg-4 col-md-6">
+                    <figure class="figure">
+
+                       <a class="" href="/article/{{ar.id}}" > <img src="{{ar.image.url}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."></a>
+                         <p style="background-color: {{ar.category.color}};
+              max-width: 1em;
+               height: 1em;
+              border-radius: 100%;"></p>
+  
+                   </figure>
+                    
+              </div>
+
+              <div class="col-lg-8 col-md-6 border-bottom my-4">
+
+              	  <p class="" style="color: #5b6672;"> {{ar.category}} </p>
+                    <a class="" href="/article/{{ar.id}}" style="color: #32234b; text-decoration: none !important;font-family: 'Cairo', sans-serif;"> <p class="h4">{{ar.title}}</p></a>
+
+                  
+
+
+                  
+                    <p class="h6 " style="margin-top: 2em;">{{ar.article_author}}</p>
+                    <p class="h6">{{ ar.posted_on}}</p>
+                    
+              </div>
+              {% endfor %}
+		
+          </div>
+      </div>
+		
+	</div>
+	
+</div>
+
+    <div class="container">
+    <!-- add paginator-->
+        <nav aria-label="...">
+  <ul class="pagination">
+    <span class="step-links">
+        {% if all_articles.has_previous %}
+            <a href="?page=1">&laquo; الأول</a>
+            <a href="?page={{ all_articles.previous_page_number }}">السابقة</a>
+        {% endif %}
+
+        <span class="current">
+            صفحة {{ all_articles.number }} من {{ all_articles.paginator.num_pages }}.
+        </span>
+
+        {% if all_articles.has_next %}
+            <a href="?page={{ all_articles.next_page_number }}">التالية</a>
+            <a href="?page={{ all_articles.paginator.num_pages }}">الأخير &raquo;</a>
+        {% endif %}
+    </span>
+  </ul>
+</nav>
+</div>
+
+        <!-- end paginator -->
+
+
+{% endblock %}

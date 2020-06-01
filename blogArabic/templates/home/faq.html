@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}التعليمات{% endblock %}
+{% block content %}
+
+
+
+  
+
+  <!-- container -->
+  <div class="container">
+      <p style="font-family: 'Cairo', sans-serif;" class="lead text-center border-bottom py-2 text-secondary">من بين الأسئلة التي تدور في ذهنك</p>
+
+    <!-- row-->
+    <div class="row " style="margin-top: 2em;">
+
+        <!-- column -->
+        <div class="col-lg">
+            
+        </div>
+        <!-- end column -->
+
+        <!-- column -->
+        <div class="col-lg-12 ">
+         <div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link text-info" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="text-decoration: none">
+          تعريف بالموقع
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body" style="font-family: 'Cairo', sans-serif;">
+      مرحبا بك في موقع المدونات العربية الذي يعتبر همزة وصل بينك و بين عالم النت من خلال القيام بنشر مقالات تعبر عن أفكارك أو وجهة نظرك و التي تكون بدورها مفيدة لمجتمعك و محيطك
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed text-info" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="text-decoration: none;font-family: 'Cairo', sans-serif;">
+         كيفية نشر مقال متناسق و بشكل سليم
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+       <p class="p6" style="font-family: 'Cairo', sans-serif;">تابع معنا مراحل إنشاء مقال </p>
+       <!-- row-->
+       <div class="row">
+        <div class="col-lg"></div>
+        <!-- column -->
+        <div class="col-lg-8 text-center">
+          <p class="h3 text-right" style="font-family: 'Cairo', sans-serif;">المرحلة الأولى</p>
+          <p style="font-family: 'Cairo', sans-serif;">من شريط الموقع إختار <span>إضافة مقال</span></p>
+           <figure class="figure">
+                <img src="{%static 'images/00.jpg' %}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+  
+              </figure>
+              <p style="font-family: 'Cairo', sans-serif;">لتنتقل بك إلى هذه الصفحة في الأسفل</p>
+               <figure class="figure">
+                <img src="{%static 'images/22.png' %}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+  
+              </figure>
+
+
+          
+        </div>
+        <!-- end column -->
+        <div class="col-lg"></div>
+        
+       </div>
+       <!--end row-->
+
+        <!-- row-->
+       <div class="row">
+        <div class="col-lg"></div>
+        <!-- column -->
+        <div class="col-lg-8 text-center">
+          <p class="h3 text-right">المرحلة الثانية</p>
+          <p>يجب عليك ملء كافة المعلومات التالية</p>
+          <p>1 إختر طبيعة المقال المنشور</p>
+          <p>2 إختر عنوان مناسب كعنوان رئيسي</p>
+          <p>3 حمل صورة تتناسب مع المقال</p>
+          <p>4 يجب عليك إدخال مصدر أو ملتقط الصورة</p>
+          <p>5 كتابة مقالك بشكل منسق</p>
+           <figure class="figure">
+                <img src="{%static 'images/1112.png' %}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+  
+              </figure>
+               <figure class="figure">
+                <img src="{%static 'images/body.png' %}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+  
+              </figure>
+             
+
+
+          
+        </div>
+        <!-- end column -->
+        <div class="col-lg"></div>
+        
+       </div>
+       <!--end row-->
+
+       <!-- row-->
+       <div class="row">
+        <div class="col-lg"></div>
+        <!-- column -->
+        <div class="col-lg-8 text-center">
+          <p class="h3 text-right">المرحلة الثالثة</p>
+          <p style="font-family: 'Cairo', sans-serif;">تنسيق و  كتابة المقال بشكل سليم</span></p>
+          <p>أكتب مقالك بشكل عادي</p>
+           <figure class="figure">
+                <img src="{%static 'images/cr.png' %}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+  
+              </figure>
+              <p>بعدها إضغك على هذه الأيقونة لتحديد الكل</p>
+               <figure class="figure">
+                <img src="{%static 'images/icon.png' %}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+  
+              </figure>
+              <p>كما في الأسفل</p>
+               <figure class="figure">
+                <img src="{%static 'images/tt.png' %}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+  
+              </figure>
+              <p>الأن قم بتنسيق المقال حسب لغة المقال إن كانت عربي أو إنجليزي</p>
+               <figure class="figure">
+                <img src="{%static 'images/ddr.png' %}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+  
+              </figure>
+              <p>مثال اللغة بالعربي</p>
+                </figure>
+              
+               <figure class="figure">
+                <img src="{%static 'images/lst.png' %}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+  
+              </figure>
+              <p>في الأخير إضغط على أيقونة 'أنشر' ليتم نش المقال</p>
+
+
+
+          
+        </div>
+        <!-- end column -->
+        <div class="col-lg"></div>
+        
+       </div>
+       <!--end row-->
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed text-info" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="text-decoration: none;font-family: 'Cairo', sans-serif;">
+        كيفية نشر فيديو من Youtube
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+       <p class=" lead">تابع كيف يتم نشر فيديو من اليوتوب في مقالك</p>
+       <img src="{%static 'images/y1.png' %}">
+       <p>انسخ رابط الفيديو من اليوتوب</p>
+       <img src="{%static 'images/y2.png' %}">
+      </div>
+    </div>
+  </div>
+ 
+            
+        </div>
+        <!-- end column -->
+
+        <!-- column -->
+        <div class="col-lg">
+            
+        </div>
+        <!-- end column -->
+        
+    </div>
+    <!-- end row -->
+      
+  </div>
+  <!-- end container -->
+
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}مقال جديد{% endblock %}
+{% block content %}
+
+
+
+
+
+<div class="container">
+    <div class="row" style="margin-top: 2em">
+      <div class="col-lg-5">
+        <p class="font-weight-bold">تعلم كيف تنشر مقال بشكل سليم</p>
+        <p>من خلال هذا الفيديو يمكنك أن تتعلم كيف تنشر مقال بشكل سليم و إحترافي</p>
+        
+      </div>
+       <div class="col-lg-7">
+        <div class="embed-responsive embed-responsive-16by9">
+           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/axHX2gFHpdA" allowfullscreen></iframe>
+       </div>
+        
+      </div>
+       
+      
+    </div>
+    
+  </div>
+
+
+  <!-- container -->
+  <div class="container">
+      <!--row -->
+      <div class="row " style="margin-top: 5em;">
+          <!-- column--> 
+        <div class="col-lg-1 col-md-2"></div>
+        <!-- column--> 
+        <div class="col-lg-10 col-md-8">
+            <p class="h6 pr1  text-center font-weight-bold shadow-lg p-3 mb-5 bg-white rounded"> إضافة منشور( تقرير )</p>
+            
+            <!-- form -->
+            <form action="/publish/" class ="put" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+                <div class="form-group ">
+                    {{ form.media }}
+                   {{ form|crispy }}
+                   
+                   
+              
+              
+   
+                </div>
+ 
+  
+  <button type="submit" class="btn btn-primary my-5 btn-lg" style="background-color: #32234b !important; border:none;">أنشر</button>
+</form>
+
+            <!-- end form -->
+            
+        </div>
+        <!-- end column-->
+        <div class="col-lg-1 col-md-2"></div>
+          
+      </div>
+      <!-- end row-->
+  </div>
+  <!-- end container -->
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% block title %}حسابي{% endblock %}
+{% block content %}
+{% block profile %}   
+
+
+
+<div class="container emp-profile ">
+            <form method="post" style="margin-top: 5em;">
+                <div class="row shadow p-3 mb-5 bg-white rounded">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img style="max-height: 15em;
+max-width: 15em;" src="{{ user.profile_picture.url }}" alt=""/>
+
+                           
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="profile-head ">
+                                    <h2 class="text-dark ">
+                                       {{user.name}}
+                                    </h2>
+                                   <div class="row">
+                                            <div class="col-md-4">
+                                                <label style="font-family: 'Cairo', sans-serif;" >تاريخ التسجيل</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p class="text-info">{{user.name.date_joined}}</p>
+                                            </div>
+                                        </div>
+
+                                      <div class="row">
+                                            <div class="col-md-4">
+                                                <label style="font-family: 'Cairo', sans-serif;">توجدك الأخير</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p class="text-info">{{user.name.last_login}}</p>
+                                                
+
+                                            </div>
+
+                                        </div>
+                                         <!-- social media -->
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                              <div class="container">
+  <div class="row">
+    <div class="social">
+            <ul>
+                <li><a href="{{user.facebook_account}}"><i class="fa fa-lg fa-facebook"></i></a></li>
+                <li><a href="{{user.twitter_account}}"><i class="fa fa-lg fa-twitter"></i></a></li>
+              
+                <li><a href="{{user.instagram_account}}"><i class="fa fa-lg fa-instagram"></i></a></li>
+               
+                <li><a href="{{user.youtube_channel}}"><i class="fa fa-lg fa-youtube-play"></i></a></li>
+            </ul>
+        </div>
+  </div>
+</div>
+                                              
+                                            </div>
+                                           
+                                        </div>
+                                        <!-- end social media -->
+                                    
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a style="font-family: 'Cairo', sans-serif;" class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">عن</a>
+                                </li>
+                               
+                                 <li class="nav-item">
+                                    <a style="font-family: 'Cairo', sans-serif;" class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="profile" aria-selected="false">منشوراتتي</a>
+                                </li>
+                                 
+                            </ul>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                      
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label style="font-family: 'Cairo', sans-serif;">اسم المستخدم</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="">{{user.name}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label style="font-family: 'Cairo', sans-serif;">اسم الأول</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="">{{user.firstname}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label style="font-family: 'Cairo', sans-serif;">البريد الالكتروني</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="">{{ user.name.email }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label style="font-family: 'Cairo', sans-serif;">المهنة</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="">{{ user.job }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label style="font-family: 'Cairo', sans-serif;">العمر</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="">{{ user.age }}</p>
+                                            </div>
+                                        </div>
+                                         <div class="row">
+                                            <div class="col-md-6">
+                                                <label style="font-family: 'Cairo', sans-serif;">البلد</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="">{{ user.pays }}</p>
+                                            </div>
+                                        </div>
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                                <label style="font-family: 'Cairo', sans-serif;">الجنس</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="">{{ user.gender }}</p>
+                                            </div>
+                                        </div>
+
+                                         <div class="row">
+                                            <div class="col-md-6">
+                                                <label style="font-family: 'Cairo', sans-serif;">المستوى الدراسي</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class=" ">{{ user.level }}</p>
+                                            </div>
+                                        </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                               
+
+                            
+                        </div>
+                          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                              
+                     
+  <div class="row">
+  {% for td in post %}
+  <div class="col-lg-6">
+    <div class="card" style="width: 18rem;border:none;">
+  {% thumbnail td.image "400x250" crop="center" as d %}
+  <img width="{{ d.width }}" height="{{ d.height }}" class="card-img-top " src="{{d.url}}" alt="Card image cap">
+  {% endthumbnail%}
+  {{td.posted_on}}
+  <div class="card-body">
+    <p class="card-text" style="font-family: 'Cairo', sans-serif;"> {{td.title}}</p>
+    <a href="delete/{{ td.id }}"><i class="fas fa-trash-alt" style="font-size: 20px;
+        margin: 4px; color: #e63731;"></i></a>||<a href="update/{{ td.id }}"><i class="fas fa-edit" style="font-size: 20px;
+        margin: 4px; color: #08961e;"></i></a>
+  </div>
+</div>
+
+    
+  </div>
+  {% endfor %}
+  </div>
+
+
+<!-- add paginator-->
+        <nav aria-label="...">
+  <ul class="pagination">
+    <span class="step-links">
+        {% if post.has_previous %}
+            <a style="font-family: 'Cairo', sans-serif;" href="?page=1">&laquo; الأول</a>
+            <a href="?page={{ post.previous_page_number }}">السابقة</a>
+        {% endif %}
+
+        <span style="font-family: 'Cairo', sans-serif;" class="current">
+            صفحة {{ post.number }} من {{ post.paginator.num_pages }}.
+        </span>
+
+        {% if post.has_next %}
+            <a style="font-family: 'Cairo', sans-serif;" href="?page={{ post.next_page_number }}">التالية</a>
+            <a style="font-family: 'Cairo', sans-serif;" href="?page={{ post.paginator.num_pages }}">الأخير &raquo;</a>
+        {% endif %}
+    </span>
+  </ul>
+</nav>
+
+        <!-- end paginator -->
+{% endblock %}
+
+
+
+
+
+                          </div>
+                    </div>
+                </div>    
+        </div>
+
+
+        
+
+
+{% endblock %}
+
