@@ -78,7 +78,8 @@ Whoosh
 wrapt
 xmltodict
 zope.interface
-
+django-tinymce
+sorl-thumbnail
 
 
 
