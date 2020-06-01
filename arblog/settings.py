@@ -26,7 +26,7 @@ SECRET_KEY = 'sc3pim198795wppah3ilb!74w!^2vbdr8wko_b=35c+=mo3gho'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'postreadme.herokuapp.com']
 ALLOW_UNICODE_SLUGS = True
 # Application definition
 THUMBNAIL_FORCE_OVERWRITE = True
